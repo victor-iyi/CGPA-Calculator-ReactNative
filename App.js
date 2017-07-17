@@ -15,4 +15,4 @@ export default class App extends Component {
 
 }
 
-AppRegistry.registerComponent('cgpa-calculator', () => App)
+AppRegistry.registerComponent('CGPA Caalculator', () => App)
