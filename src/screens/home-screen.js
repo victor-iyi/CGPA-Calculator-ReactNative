@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 import { styles } from '../styles'
-import ButtonRow from './components/button-row'
+import ButtonRow from '../components/button-row'
 
 export default class HomeScreen extends Component {
 

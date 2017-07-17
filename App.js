@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { AppRegistry, View } from 'react-native'
 import AppNavigator from './app-nav'
-import { styles } from './styles'
+import { styles } from './src/styles'
 
 export default class App extends Component {
 
