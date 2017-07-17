@@ -1,8 +1,8 @@
 import HomeScreen from './home-screen';
-import CalcCGPA from './calc-cgpa';
+import CGPAScreen from './cgpa-screen';
 
 // Screens
 module.exports = {
   HomeScreen: HomeScreen,
-  CalcCGPA: CalcCGPA,
+  CGPAScreen: CGPAScreen,
 }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
-import { styles } from '../../styles'
+import { styles } from '../styles'
 
-export default class CalcCGPA extends Component {
+export default class CGPAScreen extends Component {
 
   static navigationOptions = {
     title: 'Calculate CGPA',
