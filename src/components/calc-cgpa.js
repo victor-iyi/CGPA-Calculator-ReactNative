@@ -4,12 +4,17 @@ import { styles } from '../../styles'
 
 export default class CalcCGPA extends Component {
 
+  static navigationOptions = {
+    title: 'Calculate CGPA',
+  }
+
   render() {
+    const { params } = this.props.navigation.state
     return (
       <View style={styles.container}>
-        <Text> CalcCGPA screen </Text>
+        <Text> CalcCGPA screen {params.semesters} </Text>
       </View>
     )
   }
-  
+
 }
