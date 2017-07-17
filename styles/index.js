@@ -18,21 +18,11 @@ export const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 10
   },
-  // button: {
-  //   flex: 1,
-  //   justifyContent: 'space-between',
-  //   width: 95,
-  //   height: 95
-  // },
   buttonContainer: {
-    // flex: 1,
     flexDirection: 'row',
     marginTop: 10
-    // justifyContent: 'center',
-    // alignItems: 'center',
   },
   button: {
-    // marginBottom: 30,
     flex: 1,
     width: 95,
     margin: 3,
