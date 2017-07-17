@@ -14,6 +14,10 @@ export default class HomeScreen extends Component {
     this._controlButton = this._controlButton.bind(this);
   }
 
+  static navigationOptions = {
+    title: 'Home',
+  }
+
   clearResult() {
     if ( this.state.result > 1 ) {
       if ( this.state.result.length === 1 )
@@ -43,7 +47,7 @@ export default class HomeScreen extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text style={styles.heading}>CGPA Calculator</Text>
         <Text style={styles.input}>{this.state.result}</Text>
         <Text>Enter number of semesters & press go!</Text>

@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import { AppRegistry, View, Text } from 'react-native';
-import HomeScreen from './src/components/home-screen';
-import { styles } from './styles/index';
+import { AppRegistry, View } from 'react-native';
+import { styles } from './styles'
+import AppNavigator from './AppNavigator';
 
 export default class App extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <HomeScreen />
+      <View style={styles.wrapper}>
+        <AppNavigator ref={nav => {this.navigator = nav;}} />
       </View>
     );
   }
 
 }
 
-AppRegistry.registerComponent('cgpa-calculator', () => App);
+
+AppRegistry.registerComponent('CGPA Calculator', () => App);

@@ -1,10 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  container: {
-    marginTop: 40,
-    padding: 15,
+  wrapper: {
+    marginTop: 30,
     flex: 1
+  },
+  container: {
+    padding: 15,
   },
   heading: {
     fontSize: 40,
