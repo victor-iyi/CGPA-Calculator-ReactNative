@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Button, TouchableHighlight, Text, Alert, TouchableNativeFeedback, Platform } from 'react-native'
+import { View, Text, TouchableNativeFeedback, Platform } from 'react-native'
 import { styles } from '../../styles'
 
 export default class ButtonRow extends Component {
@@ -8,26 +8,14 @@ export default class ButtonRow extends Component {
     super(props)
   }
 
-  _onButtonPress() {
-    Alert.alert('You just touched me!')
-  }
 
   calcButtonRow() {
     return (
       this.props.buttons.map((title, index) => {
-        // return <Button key={index}   style={styles.button}
-        //                title={title} onPress={this._onButtonPress} />
-        // return (
-        //   <TouchableHighlight onPress={this._onButtonPress} underlayColor="white">
-        //     <View style={styles.button}>
-        //       <Text style={styles.buttonText}>TouchableHighlight</Text>
-        //     </View>
-        //   </TouchableHighlight>
-        // )
         return (
           <TouchableNativeFeedback
            key={index}
-           onPress={this._onPressButton}
+           onPress={ () => typeof title === 'number' ? this.props.nButton(title) : this.props.cButton(title) }
            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : ''}>
          <View style={styles.button}>
            <Text style={styles.buttonText}>{title}</Text>
