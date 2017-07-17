@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import { View, Text, TouchableNativeFeedback, Platform } from 'react-native'
-import { styles } from '../../styles'
+import React, { Component } from 'react';
+import { View, Text, TouchableNativeFeedback, Platform } from 'react-native';
+import { styles } from '../../styles';
 
 export default class ButtonRow extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
   }
 
 
@@ -15,15 +15,15 @@ export default class ButtonRow extends Component {
         return (
           <TouchableNativeFeedback
            key={index}
-           onPress={ () => typeof title === 'number' ? this.props.nButton(title) : this.props.cButton(title) }
+           onPress={() => typeof title === 'number' ? this.props.nButton(title) : this.props.cButton(title)}
            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : ''}>
-         <View style={styles.button}>
-           <Text style={styles.buttonText}>{title}</Text>
-         </View>
-       </TouchableNativeFeedback>
-        )
+           <View style={styles.button}>
+             <Text style={styles.buttonText}>{title}</Text>
+           </View>
+         </TouchableNativeFeedback>
+       );
       })
-    )
+    );
   }
 
   render() {
@@ -31,7 +31,7 @@ export default class ButtonRow extends Component {
       <View style={styles.buttonContainer}>
         { this.calcButtonRow() }
       </View>
-    )
+    );
   }
 
 }

@@ -1,39 +1,44 @@
-import React, { Component } from 'react'
-import { View, Alert, Text, Button } from 'react-native'
-import ButtonRow from './button-row'
-import { styles } from '../../styles/index'
+import React, { Component } from 'react';
+import { View, Alert, Text, Button } from 'react-native';
+import ButtonRow from './button-row';
+import { styles } from '../../styles/index';
 
 export default class HomeScreen extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.state = { result: '0' }
+    this.state = { result: '0' };
     // bindings
-    this._numButton = this._numButton.bind(this)
-    this._controlButton = this._controlButton.bind(this)
+    this._numButton = this._numButton.bind(this);
+    this._controlButton = this._controlButton.bind(this);
   }
 
   clearResult() {
     if ( this.state.result > 1 ) {
       if ( this.state.result.length === 1 )
-        this.setState( { result: '0' })
+        this.setState( { result: '0' });
       else
         this.setState(prevState => {
           return { result: prevState.result.slice(0, -1) }
-        })
+        });
     } else
-        this.setState({ result: '0' })
+        this.setState({ result: '0' });
   }
 
   _numButton(title) {
-    this.setState((prevState) => {
-      return { result: prevState.result === '0' ? `${title}` : `${prevState.result}${title}`}
-    })
+    if ( this.state.result.length < 3 )
+      this.setState((prevState) => {
+        return { result: prevState.result === '0' ? `${title}` : `${prevState.result}${title}`};
+      });
   }
 
   _controlButton(title) {
-    this.clearResult()
+    if ( title === '<=' )
+      this.clearResult();
+    else {
+      Alert.alert('Capture the result & send it to next screen')
+    }
   }
 
   render() {
@@ -47,7 +52,7 @@ export default class HomeScreen extends Component {
         <ButtonRow cButton={this._controlButton} nButton={this._numButton} buttons={ [1, 2, 3] } />
         <ButtonRow cButton={this._controlButton} nButton={this._numButton} buttons={ ['<=', 0, '=>'] } />
       </View>
-    )
+    );
   }
 
 }

@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { AppRegistry, View, Text } from 'react-native'
-import HomeScreen from './src/components/home-screen'
-import { styles } from './styles/index'
+import React, { Component } from 'react';
+import { AppRegistry, View, Text } from 'react-native';
+import HomeScreen from './src/components/home-screen';
+import { styles } from './styles/index';
 
 export default class App extends Component {
 
@@ -10,9 +10,9 @@ export default class App extends Component {
       <View style={styles.container}>
         <HomeScreen />
       </View>
-    )
+    );
   }
 
 }
 
-AppRegistry.registerComponent('cgpa-calculator', () => App)
+AppRegistry.registerComponent('cgpa-calculator', () => App);
