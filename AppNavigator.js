@@ -1,6 +1,7 @@
 import { StackNavigator } from 'react-navigation';
-import HomeScreen from './src/components/home-screen';
+const Screens = require('./src/components')
 
 export default StackNavigator({
-  Home: { screen: HomeScreen },
+  Home: { screen: Screens.HomeScreen },
+  CalcCGPA: { screen: Screens.CalcCGPA },
 });
