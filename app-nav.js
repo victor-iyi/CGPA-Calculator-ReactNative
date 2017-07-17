@@ -1,7 +1,7 @@
 import { StackNavigator } from 'react-navigation'
-
-const Screens = require('./src/components')
+const Screens = require('./screens')
 
 export default StackNavigator({
-  Home: Screens.HomeScreen,
+  Home: { screen: Screens.HomeScreen },
+  CGPA: { screen: Screens.CGPAScreen },
 })
