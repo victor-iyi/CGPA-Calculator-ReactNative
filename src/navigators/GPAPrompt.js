@@ -3,7 +3,7 @@ import { View, Alert, Text } from 'react-native';
 import { NumberButtons } from '../components';
 import { styles } from '../styles';
 
-class Home extends Component {
+class GPAPrompt extends Component {
 
   constructor(props) {
     super(props);
@@ -14,9 +14,9 @@ class Home extends Component {
     this._controlButton = this._controlButton.bind(this);
   }
 
-  static navigationOptions = {
-    title: 'CGPA Calculator',
-  };
+  static navigationOptions = ({ navigation }) => ({
+    title: 'GPA',
+  });
 
   clearResult() {
     if ( this.state.result > 1 ) {
@@ -55,7 +55,7 @@ class Home extends Component {
       <View style={styles.container}>
         <NumberButtons 
           result={this.state.result}
-          prompt="Enter number of semesters & press go!"
+          prompt="Enter number of semesters completed & press go!"
           controlButton={this._controlButton}
           clearButton={this._numButton} />
       </View>
@@ -64,4 +64,4 @@ class Home extends Component {
 
 }
 
-export default Home;
+export default GPAPrompt;

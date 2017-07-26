@@ -1,10 +1,21 @@
-import { StackNavigator } from 'react-navigation';
-import Home from './Home'; 
+import { StackNavigator, TabNavigator } from 'react-navigation';
+import CGPAPrompt from './CGPAPrompt';
+import GPAPrompt from './GPAPrompt';
 import CGPA from './CGPA'; 
 
+// Prompt tab
+const Prompt = TabNavigator({
+  GPAPrompt: { screen: GPAPrompt, },
+  CGPAPrompt: { screen: CGPAPrompt, },
+});
+
+Prompt.navigationOptions = {
+  title: 'CGPA Calculator',
+};
+
 export default StackNavigator({
-  Home: { 
-    screen: Home,
+  Prompt: {
+    screen: Prompt,
   },
   CGPA: {
     screen: CGPA,
