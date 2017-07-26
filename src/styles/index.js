@@ -5,6 +5,11 @@ const componetnts = require('./_partials/_components');
 
 const home = require('./_home');
 
+/**
+ ******************************************
+ *        Application's StyleSheet        *
+ ******************************************
+ */
 export const styles = StyleSheet.create({
   // General Styling
   wrapper: {
@@ -13,7 +18,7 @@ export const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    padding: 15,
+    padding: 5,
     backgroundColor: color.white,
   },
   ...componetnts, // contains styling for custom components

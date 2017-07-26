@@ -1,5 +1,11 @@
 const color = require('./_partials/_colors');
 
+/**
+ ***********************************
+ *        Custom StyleSheet        *
+ ***********************************
+*/
+
 module.exports = {
   // Home Page Styling
   heading: {
