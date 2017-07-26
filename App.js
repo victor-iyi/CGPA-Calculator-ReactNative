@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
-import { AppRegistry, View } from 'react-native';
-import { styles } from './src/styles'
-import AppNavigator from './app-nav';
+import React, { Component } from 'react'; 
+import { AppRegistry, StatusBar, View } from 'react-native'; 
+import AppNavigator from './src/navigators';
+import { styles } from './src/styles';
 
-export default class App extends Component {
+class App extends Component {
 
   render() {
     return (
       <View style={styles.wrapper}>
-        <AppNavigator ref={nav => {this.navigator = nav;}} />
+        <StatusBar barStyle="default" hidden={false} />
+        <AppNavigator ref={nav => { this.navigation = nav; }} />
       </View>
     );
   }
 
 }
 
-
 AppRegistry.registerComponent('CGPA Calculator', () => App);
+
+export default App;
