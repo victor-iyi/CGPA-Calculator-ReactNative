@@ -1,4 +1,4 @@
-import { StackNavigator } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 import Home from './Home'; 
 import CGPA from './CGPA'; 
 

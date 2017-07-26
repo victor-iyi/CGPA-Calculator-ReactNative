@@ -1,27 +1,26 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import Button from './Button';
 import { styles } from '../styles';
 
 // render each button
-const renderButton = (buttons) => {
-  return
-    buttons.map((title, index) => {
-      return (
-        <Button
-          key={index}
-          title={title}
-          onPress={() => typeof title === 'number' ? this.props.nButton(title) : this.props.cButton(title)}
-        />
-      );
-    });
+const renderButton = (props) => {
+  return props.buttons.map((title, index) => {
+    return (
+      <Button
+        key={index}
+        title={title}
+        onPress={() => typeof title === 'number' ? props.clearButton(title) : props.controlButton(title)}
+      />
+    );
+  });
 };
 
 // Button Row
-const ButtonRow = ({buttons}) => {
+const ButtonRow = (props) => {
   return (
     <View style={styles.buttonContainer}>
-      { renderButton(buttons) }
+      { renderButton(props) }
     </View>
   );
 };

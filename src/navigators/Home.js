@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Alert, Text, Button } from 'react-native';
+import { View, Alert, Text } from 'react-native';
 import { ButtonRow } from '../components';
 import { styles } from '../styles';
 
@@ -15,8 +15,8 @@ export default class HomeScreen extends Component {
   }
 
   static navigationOptions = {
-    title: 'Home',
-  }
+    title: 'CGPA Calculator',
+  };
 
   clearResult() {
     if ( this.state.result > 1 ) {
@@ -54,13 +54,13 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.heading}>CGPA Calculator</Text>
+        {/*<Text style={styles.heading}>CGPA Calculator</Text>*/}
         <Text style={styles.input}>{this.state.result}</Text>
-        <Text>Enter number of semesters & press go!</Text>
-        <ButtonRow cButton={this._controlButton} nButton={this._numButton} buttons={ [7, 8, 9] } />
-        <ButtonRow cButton={this._controlButton} nButton={this._numButton} buttons={ [4, 5, 6] } />
-        <ButtonRow cButton={this._controlButton} nButton={this._numButton} buttons={ [1, 2, 3] } />
-        <ButtonRow cButton={this._controlButton} nButton={this._numButton} buttons={ ['<=', 0, '=>'] } />
+        <Text style={styles.prompt}>Enter number of semesters & press go!</Text>
+        <ButtonRow controlButton={this._controlButton} clearButton={this._numButton} buttons={ [7, 8, 9] } />
+        <ButtonRow controlButton={this._controlButton} clearButton={this._numButton} buttons={ [4, 5, 6] } />
+        <ButtonRow controlButton={this._controlButton} clearButton={this._numButton} buttons={ [1, 2, 3] } />
+        <ButtonRow controlButton={this._controlButton} clearButton={this._numButton} buttons={ ['<=', 0, '=>'] } />
       </View>
     );
   }

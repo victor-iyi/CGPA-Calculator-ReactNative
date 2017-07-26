@@ -3,12 +3,15 @@ const color = require('./_colors');
 module.exports = {
   // button component styling
   button: {
-    backgroundColor: color.mediumvioletred,
-    margin: 5,
-    padding: 15,
+    flex: 1,
+    width: 95,
+    margin: 3,
+    alignItems: 'center',
+    backgroundColor: '#2196F3',
   },
   buttonText: {
+    padding: 20,
     color: color.white,
-    fontSize: 15,
+    fontSize: 30
   },
 };

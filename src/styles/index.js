@@ -1,39 +1,22 @@
 import { StyleSheet } from 'react-native';
 
+const color = require('./_partials/_colors');
+const componetnts = require('./_partials/_components');
+
+const home = require('./_home');
+
 export const styles = StyleSheet.create({
+  // General Styling
   wrapper: {
-    marginTop: 30,
-    flex: 1
+    flex: 1,
+    paddingTop: 23,
   },
   container: {
-    padding: 15,
-  },
-  heading: {
-    fontSize: 40,
-    fontWeight: 'bold',
-    color: '#006699',
-    textAlign: 'center'
-  },
-  input: {
-    fontSize: 40,
-    textAlign: 'right',
-    padding: 10,
-    marginBottom: 10
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    marginTop: 10
-  },
-  button: {
     flex: 1,
-    width: 95,
-    margin: 3,
-    alignItems: 'center',
-    backgroundColor: '#2196F3',
+    padding: 15,
+    backgroundColor: color.white,
   },
-  buttonText: {
-    padding: 20,
-    color: 'white',
-    fontSize: 30
-  }
+  ...componetnts, // contains styling for custom components
+  ...home, // contains home styling
+  
 });
