@@ -44,7 +44,7 @@ class GPAPrompt extends Component {
       const result = parseInt(this.state.result)
       if ( result > 0 && result <= 12 ) {
         const { navigate } = this.props.navigation;
-        navigate('CGPA', { semesters: result });
+        navigate('CalculateGPA', { semesters: result });
       } else
         Alert.alert('Number of semesters out of range.\nMin is 1 & Max is 12')
     }

@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { styles } from '../styles';
 
-class CGPA extends Component {
+class CalculateGPA extends Component {
 
-  static navigationOptions = {
-    title: 'Calculate CGPA',
-  };
-
+  static navigationOptions = ({ navigation }) => ({
+    title: 'Calculate GPA',
+  });
+  
   render() {
     const { params } = this.props.navigation.state
     return (
@@ -19,4 +19,4 @@ class CGPA extends Component {
 
 }
 
-export default CGPA;
+export default CalculateGPA;
