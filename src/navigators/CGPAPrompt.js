@@ -37,8 +37,8 @@ class CGPAPrompt extends Component {
       });
   }
 
-  _controlButton(title) {
-    if ( title === '<=' )
+  _controlButton(action) {
+    if ( action === 'clear' )
       this.clearResult();
     else {
       const result = parseInt(this.state.result)
@@ -57,7 +57,7 @@ class CGPAPrompt extends Component {
           result={this.state.result}
           prompt="Enter number of sessions completed & press go!"
           controlButton={this._controlButton}
-          clearButton={this._numButton} />
+          numButton={this._numButton} />
       </View>
     );
   }

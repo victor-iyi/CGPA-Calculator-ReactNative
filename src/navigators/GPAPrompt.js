@@ -37,16 +37,15 @@ class GPAPrompt extends Component {
       });
   }
 
-  _controlButton(title) {
-    if ( title === '<=' )
-      this.clearResult();
+  _controlButton(action) {
+    if ( action === 'clear' ) this.clearResult();
     else {
       const result = parseInt(this.state.result)
       if ( result > 0 && result <= 12 ) {
         const { navigate } = this.props.navigation;
         navigate('CalculateGPA', { semesters: result });
-      } else
-        Alert.alert('Number of semesters out of range.\nMin is 1 & Max is 12')
+      } 
+      else Alert.alert('Number of semesters out of range.\nMin is 1 & Max is 12');
     }
   }
 
@@ -57,7 +56,7 @@ class GPAPrompt extends Component {
           result={this.state.result}
           prompt="Enter number of semesters completed & press go!"
           controlButton={this._controlButton}
-          clearButton={this._numButton} />
+          numButton={this._numButton} />
       </View>
     );
   }

@@ -3,15 +3,19 @@ const color = require('./_colors');
 module.exports = {
   // button component styling
   button: {
-    flex: 1,
     width: 95,
-    margin: 3,
+    height: 95,
+    flexGrow: 1,
     alignItems: 'center',
-    backgroundColor: '#2196F3',
+    justifyContent: 'space-between',
+    margin: 2,
+    // marginBottom: 5,
+    // backgroundColor: color.red,
   },
   buttonText: {
-    padding: 20,
-    color: color.white,
-    fontSize: 30
+    padding: 30,
+    fontSize: 30,
+    color: color.black,
+    textAlign: 'center',
   },
 };

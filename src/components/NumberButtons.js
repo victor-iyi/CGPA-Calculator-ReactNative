@@ -8,10 +8,10 @@ const NumberButtons = (props) => {
     <View>
       <Text style={styles.input}>{props.result}</Text>
       <Text style={styles.prompt}>{props.prompt}</Text>
-      <ButtonRow controlButton={props.controlButton} clearButton={props.clearButton} buttons={ [7, 8, 9] } />
-      <ButtonRow controlButton={props.controlButton} clearButton={props.clearButton} buttons={ [4, 5, 6] } />
-      <ButtonRow controlButton={props.controlButton} clearButton={props.clearButton} buttons={ [1, 2, 3] } />
-      <ButtonRow controlButton={props.controlButton} clearButton={props.clearButton} buttons={ ['<=', 0, '=>'] } />
+      <ButtonRow type="number" numButton={props.numButton} buttons={ [7, 8, 9] } />
+      <ButtonRow type="number" numButton={props.numButton} buttons={ [4, 5, 6] } />
+      <ButtonRow type="number" numButton={props.numButton} buttons={ [1, 2, 3] } />
+      <ButtonRow type="control" numButton={props.numButton} controlButton={props.controlButton} buttons={ ['', 0, ''] } />
     </View>
   );
 };
