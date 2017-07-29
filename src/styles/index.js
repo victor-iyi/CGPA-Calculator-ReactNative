@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const color = require('./_partials/_colors');
 const componetnts = require('./_partials/_components');
 
-const home = require('./_home');
+const prompt = require('./_prompt');
 
 /**
  ******************************************
@@ -22,6 +22,6 @@ export const styles = StyleSheet.create({
     backgroundColor: color.white,
   },
   ...componetnts, // contains styling for custom components
-  ...home, // contains home styling
+  ...prompt, // contains prompt styling
   
 });
