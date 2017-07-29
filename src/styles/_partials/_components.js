@@ -9,8 +9,6 @@ module.exports = {
     alignItems: 'center',
     justifyContent: 'space-between',
     margin: 2,
-    // marginBottom: 5,
-    // backgroundColor: color.red,
   },
   buttonText: {
     padding: 30,
