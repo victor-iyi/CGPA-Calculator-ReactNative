@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { styles } from '../styles';
+import { GPAInputRow } from '../components';
 
 class CalculateGPA extends Component {
 
@@ -17,16 +18,12 @@ class CalculateGPA extends Component {
           <Text style={styles.gpaHeading}>GRADES</Text>
           <Text style={styles.gpaHeading}>UNITS</Text>
         </View>
-        <View style={styles.gparow}>
-          <Text style={styles.gpaElement}>Course 1</Text>
-          <Text style={styles.gpaElement}>B</Text>
-          <Text style={styles.gpaElement}>2</Text>
-        </View>
-        <View style={styles.gparow}>
-          <Text style={styles.gpaElement}>Course 2</Text>
-          <Text style={styles.gpaElement}>A</Text>
-          <Text style={styles.gpaElement}>3</Text>
-        </View>
+        <GPAInputRow course="Course 1" grade="A" unit={3} />        
+        <GPAInputRow course="Course 2" grade="B" unit={3} />        
+        <GPAInputRow course="Course 3" grade="B" unit={3} />        
+        <GPAInputRow course="Course 4" grade="A" unit={4} />        
+        <GPAInputRow course="Course 5" grade="C" unit={2} />        
+        <GPAInputRow course="Course 6" grade="A" unit={2} />
       </View>
     );
   }
