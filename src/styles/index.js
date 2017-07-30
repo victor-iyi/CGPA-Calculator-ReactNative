@@ -4,6 +4,7 @@ const color = require('./_partials/_colors');
 const componetnts = require('./_partials/_components');
 
 const prompt = require('./_prompt');
+const calc_gpa = require('./_calc_gpa');
 
 /**
  ******************************************
@@ -23,5 +24,6 @@ export const styles = StyleSheet.create({
   },
   ...componetnts, // contains styling for custom components
   ...prompt, // contains prompt styling
+  ...calc_gpa, // contains calc_gpa styling
   
 });
