@@ -1,13 +1,34 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import { styles } from '../styles';
 
 export const GPAInputRow = (props) => {
   return(
     <View style={styles.gparow}>
-        <Text style={styles.gpaElement}>{props.course}</Text>
-        <Text style={styles.gpaElement}>{props.grade}</Text>
-        <Text style={styles.gpaElement}>{props.unit}</Text>
+      {/** Courses */}
+      <Text style={styles.gpaElement}>{props.course}</Text>
+      {/** Grades */}
+      <TextInput style={styles.gpaInput}
+          value={props.grade}
+          autoCorrect={false}
+          returnKeyType="next"
+          spellCheck={false}
+          maxLength={1}
+          keyboardType="ascii-capable"
+          autoCapitalize="characters"
+          underlineColorAndroid="transparent"
+          style={{textAlignVertical: 'bottom'}}
+          onChangeText={props.onChangeText} />
+      {/** Units */}
+      <TextInput style={styles.gpaInput}
+          maxLength={1}
+          value={props.unit}
+          returnKeyType="next"
+          keyboardType="numeric"
+          underlineColorAndroid="transparent"
+          style={{textAlignVertical: 'bottom'}}
+          onChangeText={props.onChangeText} />
+        
       </View>
   );
 };

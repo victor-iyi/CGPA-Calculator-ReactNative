@@ -23,4 +23,12 @@ module.exports = {
     fontWeight: 'normal',
     marginBottom: 8,
   },
+  gpaInput: {
+    height: 40,
+    width: 40,
+    // backgroundColor: color.blueviolet,
+    margin: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 };

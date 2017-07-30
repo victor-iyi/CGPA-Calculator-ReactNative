@@ -1,16 +1,51 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import { styles } from '../styles';
+import React, { Component } from 'react'; 
+import { View, Text } from 'react-native'; 
 import { GPAInputRow } from '../components';
+import { styles } from '../styles';
 
-class CalculateGPA extends Component {
+/**
+ *************************************
+ *        Naviagtor Component        *
+ *************************************
+ */
+class CalulateGPA extends Component {
+
+  constructor(props) {
+    super(props);
+    // component state
+    this.state = {
+      grades: [],
+      units: [],
+    };
+    // navigation params
+    this.params = this.props.navigation.state.params;
+    // bindings
+    this._updateGrade = this._updateGrade.bind(this);
+    this._updateUnit = this._updateUnit.bind(this);
+  }
 
   static navigationOptions = ({ navigation }) => ({
-    title: 'Calculate GPA',
+    title: `Calulate GPA`, //`$ {navigation.state.params.var }`
+    // headerRight: <Button title="Info" onPress={() => Alert.alert('Info nav clicked!') } />,
   });
   
+  _updateGrade() {
+  }
+
+  _updateUnit() {
+  }
+
+  renderInputRow() {
+    // const { params } = this.props.navigation.state;
+    console.log(this.params);
+    for (let i=1; i<=this.params.semesters; i++) {
+      return (
+        <GPAInputRow course={`Course ${i}`} grade={this.state.grades[i]} unit={this.state.units[i]} />
+      );
+    }
+  }
+
   render() {
-    const { params } = this.props.navigation.state
     return (
       <View style={styles.container}>
         <View style={styles.gparow}>
@@ -18,16 +53,11 @@ class CalculateGPA extends Component {
           <Text style={styles.gpaHeading}>GRADES</Text>
           <Text style={styles.gpaHeading}>UNITS</Text>
         </View>
-        <GPAInputRow course="Course 1" grade="A" unit={3} />        
-        <GPAInputRow course="Course 2" grade="B" unit={3} />        
-        <GPAInputRow course="Course 3" grade="B" unit={3} />        
-        <GPAInputRow course="Course 4" grade="A" unit={4} />        
-        <GPAInputRow course="Course 5" grade="C" unit={2} />        
-        <GPAInputRow course="Course 6" grade="A" unit={2} />
+        { this.renderInputRow() }
       </View>
     );
   }
 
 }
 
-export default CalculateGPA;
+export default CalulateGPA;
