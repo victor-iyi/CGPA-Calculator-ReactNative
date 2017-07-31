@@ -18,6 +18,8 @@ module.exports = {
   prompt: {
     textAlign: 'center',
     margin: 5,
+    fontSize: 16,
+    fontStyle: 'italic',
   },
   buttonRow: {
     justifyContent: 'center',
