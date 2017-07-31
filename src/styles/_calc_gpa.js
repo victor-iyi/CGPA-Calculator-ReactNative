@@ -26,12 +26,10 @@ module.exports = {
   gpaInput: {
     height: 40,
     width: 80,
-    backgroundColor: color.darkgray,
+    backgroundColor: color.silver,
     margin: 5,
     color: color.white,
     textAlign: 'center',
     fontSize: 16,
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
 };

@@ -9,18 +9,17 @@ export const GPAInputRow = (props) => {
       <Text style={styles.gpaElement}>{props.course}</Text>
       {/** Grades */}
       <TextInput style={styles.gpaInput}
-          maxLength={1}
-          spellCheck={false}
-          autoCorrect={false}
-          returnKeyType="next"
-          autoCapitalize="characters"
-          keyboardType="ascii-capable"
           underlineColorAndroid="transparent"
+          autoCapitalize="characters"
+          returnKeyType="next"
+          autoCorrect={false}
+          spellCheck={false}
+          maxLength={1}
           value={props.grade}
           onChangeText={props.onChangeText} />
       {/** Units */}
       <TextInput style={styles.gpaInput}
-          maxLength={1}
+          maxLength={2}
           value={props.unit}
           returnKeyType="next"
           keyboardType="numeric"
