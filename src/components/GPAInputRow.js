@@ -14,19 +14,17 @@ export const GPAInputRow = (props) => {
         returnKeyType="next"
         spellCheck={false}
         maxLength={1}
-        onchangeText={props.handleChangeGrade}
-        value={props.grade}
-        style={styles.gpaInput}
-        onChangeText={props.onChangeText} /> 
+        onChangeText={props.updateGrade}
+        // value={props.grade}
+        style={styles.gpaInput} />
       <TextInput
         underlineColorAndroid="transparent"
         keyboardType="numeric"
         returnKeyType="next"
-        maxLength={2}
-        onChangeText={props.handleChangeUnit}
-        value={props.unit}
-        style={styles.gpaInput}
-        onChangeText={props.onChangeText} />
+        maxLength={1}
+        onChangeText={props.updateUnit}
+        // value={props.unit}
+        style={styles.gpaInput} />
         
     </View>
   );

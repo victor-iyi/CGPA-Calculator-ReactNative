@@ -21,12 +21,8 @@ class CalulateGPA extends Component {
     // navigation params
     this.params = this.props.navigation.state.params;
     // bindings
-    this._updateGrade = this
-      ._updateGrade
-      .bind(this);
-    this._updateUnit = this
-      ._updateUnit
-      .bind(this);
+    this._updateGrade = this._updateGrade.bind(this);
+    this._updateUnit = this._updateUnit.bind(this);
   }
 
   static navigationOptions = ({navigation}) => ({
@@ -34,20 +30,46 @@ class CalulateGPA extends Component {
     // headerRight: <Button title="Info" onPress={() => Alert.alert('Info nav clicked!') } />,
   });
 
-  _updateGrade() {}
+  _updateGrade(grade) {
+    this.setState((prev, props) => {
+      console.log({
+        grades: [ ...prev.grades, grade ]
+      });
+      return {
+        grades: [ ...prev.grades, grade ]
+      };
+    });
+  }
 
-  _updateUnit() {}
+  _updateUnit(unit) {
+    this.setState((prev, props) => { 
+      console.log({
+        units: [ ...prev.units, parseInt(unit) ]
+      });
+      return {
+        units: [ ...prev.units, parseInt(unit) ]
+      };
+    });
+  }
+
+  _calculate() {
+    // calculates the gpa
+  }
 
   renderInputRow(number) {
     let views = [];
     for (let i = 1; i <= this.params.semesters; i++) {
       views.push(<GPAInputRow
+        key={i}
         course={`Course ${i}`}
+        updateUnit={this._updateUnit}
+        updateGrade={this._updateGrade}
         grade={this.state.grades[i]}
-        unit={this.state.units[i]}/>);
+        unit={this.state.units[i]} />);
     }
     return views;
   }
+
   render() {
     return (
       <View style={styles.container}>
