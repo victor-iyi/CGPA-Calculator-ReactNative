@@ -14,6 +14,7 @@ class CalulateGPA extends Component {
     super(props);
     // component state
     this.state = {
+      counter: 1,
       grades: [],
       units: []
     };
@@ -37,15 +38,16 @@ class CalulateGPA extends Component {
 
   _updateUnit() {}
 
-  renderInputRow() {
+  renderInputRow(number) {
+    let views = [];
     for (let i = 1; i <= this.params.semesters; i++) {
-      return <GPAInputRow
+      views.push(<GPAInputRow
         course={`Course ${i}`}
         grade={this.state.grades[i]}
-        unit={this.state.units[i]}/>
+        unit={this.state.units[i]}/>);
     }
+    return views;
   }
-
   render() {
     return (
       <View style={styles.container}>
@@ -54,7 +56,9 @@ class CalulateGPA extends Component {
           <Text style={styles.gpaHeading}>GRADES</Text>
           <Text style={styles.gpaHeading}>UNITS</Text>
         </View>
-        {this.renderInputRow()}
+        <View>
+          {this.renderInputRow()}
+        </View>
       </View>
     );
   }

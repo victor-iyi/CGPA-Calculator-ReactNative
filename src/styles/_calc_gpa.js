@@ -8,6 +8,11 @@ const color = require('./_partials/_colors');
 module.exports = {
 
   // CalcGPA Page Styling
+  row: {
+    flexDirection: 'column',
+    // alignItems: 'flex-start',
+    // justifyContent: 'flex-start',
+  },
   gparow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -30,6 +35,6 @@ module.exports = {
     margin: 5,
     color: color.white,
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: 18,
   },
 };
