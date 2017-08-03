@@ -1,6 +1,6 @@
-import React, { Component } from 'react'; 
-import { View, Text } from 'react-native'; 
-import { styles } from '../styles';
+import React, {Component} from 'react';
+import {View, Text} from 'react-native';
+import {styles} from '../styles';
 
 /**
  *************************************
@@ -15,11 +15,10 @@ class CalculateCGPA extends Component {
     this.state = {};
     // navigation params
     this.params = this.props.navigation.state.params;
-    // bindings
-    //this.meth = this.meth.bind(this);
+    // bindings this.meth = this.meth.bind(this);
   }
 
-  static navigationOptions = ({ navigation }) => ({
+  static navigationOptions = ({navigation}) => ({
     title: `CalculateCGPA Page`, //`$ {navigation.state.params.var }`
     // headerRight: <Button title="Info" onPress={() => Alert.alert('Info nav clicked!') } />,
   });
@@ -28,7 +27,7 @@ class CalculateCGPA extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
-          CalculateCGPA screen { this.params.sessions }
+          CalculateCGPA screen {this.params.sessions}
         </Text>
       </View>
     );

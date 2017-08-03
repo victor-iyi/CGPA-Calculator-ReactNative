@@ -14,15 +14,18 @@ class CalulateGPA extends Component {
     super(props);
     // component state
     this.state = {
-      counter: 1,
-      grades: [],
-      units: []
+      grades: [], // entered grades e.g ["A", "B", "C", ...., "D"];
+      units: [] // entered units e.g [2,3,3,3,4,1,2,3,3];
     };
     // navigation params
     this.params = this.props.navigation.state.params;
     // bindings
-    this._updateGrade = this._updateGrade.bind(this);
-    this._updateUnit = this._updateUnit.bind(this);
+    this._updateGrade = this
+      ._updateGrade
+      .bind(this);
+    this._updateUnit = this
+      ._updateUnit
+      .bind(this);
   }
 
   static navigationOptions = ({navigation}) => ({
@@ -33,15 +36,21 @@ class CalulateGPA extends Component {
   _updateGrade(grade) {
     this.setState((prev, props) => {
       return {
-        grades: [ ...prev.grades, grade ]
+        grades: [
+          ...prev.grades,
+          grade
+        ]
       };
     });
   }
 
   _updateUnit(unit) {
-    this.setState((prev, props) => { 
+    this.setState((prev, props) => {
       return {
-        units: [ ...prev.units, parseInt(unit) ]
+        units: [
+          ...prev.units,
+          parseInt(unit)
+        ]
       };
     });
   }
@@ -57,7 +66,7 @@ class CalulateGPA extends Component {
         key={i}
         course={`Course ${i}`}
         updateUnit={this._updateUnit}
-        updateGrade={this._updateGrade} />);
+        updateGrade={this._updateGrade}/>);
     }
     return views;
   }
@@ -72,6 +81,9 @@ class CalulateGPA extends Component {
         </View>
         <View>
           {this.renderInputRow()}
+        </View>
+        <View>
+          <Button title="Calculate" onPress={this._calculate} />
         </View>
       </View>
     );
