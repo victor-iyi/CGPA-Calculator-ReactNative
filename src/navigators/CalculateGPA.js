@@ -32,9 +32,6 @@ class CalulateGPA extends Component {
 
   _updateGrade(grade) {
     this.setState((prev, props) => {
-      console.log({
-        grades: [ ...prev.grades, grade ]
-      });
       return {
         grades: [ ...prev.grades, grade ]
       };
@@ -43,9 +40,6 @@ class CalulateGPA extends Component {
 
   _updateUnit(unit) {
     this.setState((prev, props) => { 
-      console.log({
-        units: [ ...prev.units, parseInt(unit) ]
-      });
       return {
         units: [ ...prev.units, parseInt(unit) ]
       };
