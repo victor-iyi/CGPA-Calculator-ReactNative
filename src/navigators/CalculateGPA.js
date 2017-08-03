@@ -63,9 +63,7 @@ class CalulateGPA extends Component {
         key={i}
         course={`Course ${i}`}
         updateUnit={this._updateUnit}
-        updateGrade={this._updateGrade}
-        grade={this.state.grades[i]}
-        unit={this.state.units[i]} />);
+        updateGrade={this._updateGrade} />);
     }
     return views;
   }

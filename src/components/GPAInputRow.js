@@ -15,7 +15,6 @@ export const GPAInputRow = (props) => {
         spellCheck={false}
         maxLength={1}
         onChangeText={props.updateGrade}
-        // value={props.grade}
         style={styles.gpaInput} />
       <TextInput
         underlineColorAndroid="transparent"
@@ -23,7 +22,6 @@ export const GPAInputRow = (props) => {
         returnKeyType="next"
         maxLength={1}
         onChangeText={props.updateUnit}
-        // value={props.unit}
         style={styles.gpaInput} />
         
     </View>
