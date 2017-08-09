@@ -12,19 +12,19 @@ export const GPAInputRow = (props) => {
 
       {/* 
        * 
-      <Select
-        onSelect={props.onGradeChange}
-        defaultText="Grade"
-        style={styles.gpaGrade}
-        backdropStyle={{ backgroundColor: "#d3d5d6" }}
-        optionListStyle={{ backgroundColor: "#F5FCFF" }}>
-        <Option value={{ label: "A", weight:5 }}>A</Option>
-        <Option value={{ label: "B", weight:4 }}>B</Option>
-        <Option value={{ label: "C", weight:3 }}>C</Option>
-        <Option value={{ label: "D", weight:2 }}>D</Option>
-        <Option value={{ label: "E", weight:1 }}>E</Option>
-        <Option value={{ label: "F", weight:0 }}>F</Option>
-      </Select>
+       * <Select
+       *   onSelect={props.onGradeChange}
+       *  defaultText="Grade"
+       *  style={styles.gpaGrade}
+       *   backdropStyle={{ backgroundColor: "#d3d5d6" }}
+       *   optionListStyle={{ backgroundColor: "#F5FCFF" }}>
+       *   <Option value={{ label: "A", weight:5 }}>A</Option>
+       *   <Option value={{ label: "B", weight:4 }}>B</Option>
+       *   <Option value={{ label: "C", weight:3 }}>C</Option>
+       *   <Option value={{ label: "D", weight:2 }}>D</Option>
+       *   <Option value={{ label: "E", weight:1 }}>E</Option>
+       *   <Option value={{ label: "F", weight:0 }}>F</Option>
+       * </Select>
        */}
 
       <UIStepper
