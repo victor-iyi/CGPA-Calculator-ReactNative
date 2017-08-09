@@ -39,18 +39,18 @@ class CalulateGPA extends Component {
       return {
         grades: [
           ...prev.grades,
-          grade
+          value
         ]
       };
     });
   }
 
-  _onUnitChange(unit) {
+  _onUnitChange(value, index) {
     this.setState((prev, props) => {
       return {
         units: [
           ...prev.units,
-          parseInt(unit)
+          value
         ]
       };
     });

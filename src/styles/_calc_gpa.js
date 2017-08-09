@@ -17,14 +17,7 @@ module.exports = {
     marginBottom: 10,
     padding: 5,
   },
-  gpaHeading: {
+  courseLabel: {
     fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
   },
-  gpaGrade: {
-    borderWidth: .5,
-    borderColor: color.grey,
-    width: 50,
-  }
 };
