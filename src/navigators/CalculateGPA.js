@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
-// import { Button } from 'react-native-elements'; 
+import { View, ScrollView, Text } from 'react-native';
+import { Button } from 'react-native-elements'; 
 import {GPAInputRow} from '../components';
 import {styles} from '../styles';
 
@@ -74,19 +74,23 @@ class CalulateGPA extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
+      {/* 
+       * 
         <View style={styles.gparow}>
           <Text style={styles.gpaHeading}>COURSES</Text>
           <Text style={styles.gpaHeading}>GRADES</Text>
           <Text style={styles.gpaHeading}>UNITS</Text>
         </View>
+       */}
+      
         <View>
           {this.renderInputRow()}
         </View>
         <View>
-          <Button title="Calculate" onPress={this._calculate} />
+          <Button raised icon={{name: 'calculator', type: 'font-awesome'}}title="Calculate" onPress={this._calculate} />
         </View>
-      </View>
+      </ScrollView>
     );
   }
 

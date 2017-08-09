@@ -1,26 +1,40 @@
 import React from 'react';
 import { View, Text, Picker } from 'react-native';
 import UIStepper from 'react-native-ui-stepper';
-import Dropdown from 'react-native-dropdown-android';
+import { Select, Option } from "react-native-chooser";
 import { styles } from '../styles';
 
 export const GPAInputRow = (props) => {
   return (
     <View style={styles.gparow}>
+
       <Text style={styles.courseLabel}> {props.course} </Text>
-      <Dropdown
-        style={{ height: 20, width: 200 }}
-        values={['--Choose--', 'one', 2, 3.5, { four: 4 }, [5, 6, 7], false]}
-        selected={1} onChange={(data) => { console.log(data); }} />
+
+      <Select
+        onSelect={props.onGradeChange}
+        defaultText="Grade"
+        style={styles.gpaGrade}
+        backdropStyle={{ backgroundColor: "#d3d5d6" }}
+        optionListStyle={{ backgroundColor: "#F5FCFF" }}>
+        <Option value={{ label: "A", weight:5 }}>A</Option>
+        <Option value={{ label: "B", weight:4 }}>B</Option>
+        <Option value={{ label: "C", weight:3 }}>C</Option>
+        <Option value={{ label: "D", weight:2 }}>D</Option>
+        <Option value={{ label: "E", weight:1 }}>E</Option>
+        <Option value={{ label: "F", weight:0 }}>F</Option>
+      </Select>
+
       <UIStepper
         minimumValue={0}
         displayValue={true}
         tintColor="#0a0a0a"
         textColor="#0a0a0a"
         borderColor="#0a0a0a"
+        borderWidth={.5}
         overrideTintColor={true}
         onValueChange={props.onUnitChange}
       />
+
     </View>
   );
 };
