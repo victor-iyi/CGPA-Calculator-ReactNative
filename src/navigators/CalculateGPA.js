@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, Button } from 'react-native';
+// import { Button } from 'react-native-elements'; 
 import {GPAInputRow} from '../components';
 import {styles} from '../styles';
 
@@ -20,11 +21,11 @@ class CalulateGPA extends Component {
     // navigation params
     this.params = this.props.navigation.state.params;
     // bindings
-    this._updateGrade = this
-      ._updateGrade
+    this._onGradeChange = this
+      ._onGradeChange
       .bind(this);
-    this._updateUnit = this
-      ._updateUnit
+    this._onUnitChange = this
+      ._onUnitChange
       .bind(this);
   }
 
@@ -33,7 +34,7 @@ class CalulateGPA extends Component {
     // headerRight: <Button title="Info" onPress={() => Alert.alert('Info nav clicked!') } />,
   });
 
-  _updateGrade(grade) {
+  _onGradeChange(value, index) {
     this.setState((prev, props) => {
       return {
         grades: [
@@ -44,7 +45,7 @@ class CalulateGPA extends Component {
     });
   }
 
-  _updateUnit(unit) {
+  _onUnitChange(unit) {
     this.setState((prev, props) => {
       return {
         units: [
@@ -65,8 +66,8 @@ class CalulateGPA extends Component {
       views.push(<GPAInputRow
         key={i}
         course={`Course ${i}`}
-        updateUnit={this._updateUnit}
-        updateGrade={this._updateGrade}/>);
+        onUnitChange={this._onUnitChange}
+        onGradeChange={this._onGradeChange}/>);
     }
     return views;
   }
