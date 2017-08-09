@@ -1,29 +1,22 @@
 import React from 'react';
-import {View, Text, TextInput} from 'react-native';
+import {View, Text, Picker} from 'react-native';
 import {styles} from '../styles';
 
 export const GPAInputRow = (props) => {
   return (
     <View style={styles.gparow}>
-      {/** Courses */}
-      <Text style={styles.gpaElement}>{props.course}</Text>
-      {/** Grades */}
-      <TextInput
-        underlineColorAndroid="transparent"
-        autoCapitalize="characters"
-        returnKeyType="next"
-        spellCheck={false}
-        maxLength={1}
-        onChangeText={props.updateGrade}
-        style={styles.gpaInput} />
-      <TextInput
-        underlineColorAndroid="transparent"
-        keyboardType="numeric"
-        returnKeyType="next"
-        maxLength={1}
-        onChangeText={props.updateUnit}
-        style={styles.gpaInput} />
-        
+      <Text style={styles.courseLabel}> Course 1 </Text>
+      <Picker
+        selectedValue="A"
+        onValueChange={props.onValueChange}>
+        <Picker.Item label="A" value="A" />
+        <Picker.Item label="B" value="B" />
+        <Picker.Item label="C" value="C" />
+        <Picker.Item label="D" value="D" />
+        <Picker.Item label="E" value="E" />
+        <Picker.Item label="F" value="F" />
+      </Picker>
+      
     </View>
   );
 };
