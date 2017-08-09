@@ -6,14 +6,17 @@ import CalculateCGPA from './CalculateCGPA';
 
 // Prompt tab navigator
 const Prompt = TabNavigator({
-  GPAPrompt: { screen: GPAPrompt, },
-  CGPAPrompt: { screen: CGPAPrompt, },
+  GPAPrompt: {
+    screen: GPAPrompt
+  },
+  CGPAPrompt: {
+    screen: CGPAPrompt
+  }
 });
 // Prompt options
 Prompt.navigationOptions = {
-  title: 'CGPA Calculator',
+  title: 'CGPA Calculator'
 };
-
 
 /**
 /**************************
@@ -22,15 +25,15 @@ Prompt.navigationOptions = {
  */
 export default StackNavigator({
   // Prompt Page
-  Prompt: { 
-    screen: Prompt,
+  Prompt: {
+    screen: Prompt
   },
   // CalculateGPA Page
-  CalculateGPA: { 
-    screen: CalculateGPA,
+  CalculateGPA: {
+    screen: CalculateGPA
   },
   // CalculateCGPA Page
-  CalculateCGPA : {
-    screen: CalculateCGPA,
-  },
+  CalculateCGPA: {
+    screen: CalculateCGPA
+  }
 });
