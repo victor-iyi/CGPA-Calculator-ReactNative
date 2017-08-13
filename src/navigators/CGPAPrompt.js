@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Alert, Text } from 'react-native';
-import { NumberButtons } from '../components';
+import { PromptLayout } from '../components';
 import { styles } from '../styles';
 
 class CGPAPrompt extends Component {
@@ -53,7 +53,7 @@ class CGPAPrompt extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <NumberButtons 
+        <PromptLayout 
           result={this.state.result}
           prompt="Enter number of sessions completed & press go!"
           controlButton={this._controlButton}

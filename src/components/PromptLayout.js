@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import ButtonRow from './ButtonRow';
 import { styles } from '../styles';
 
-const NumberButtons = (props) => {
+const PropmptLayout = (props) => {
   return(
     <View>
       <Text style={styles.input}>{props.result}</Text>
@@ -16,4 +16,4 @@ const NumberButtons = (props) => {
   );
 };
 
-export default NumberButtons;
+export default PropmptLayout;
