@@ -13,7 +13,7 @@ const Button = (props) => {
       <TouchableOpacity 
           onPress={props.onPress}>
         <View style={props.button || styles.button}>
-          <Image source={props.source} style={{ width: 95, height: 95 }}>
+          <Image source={props.source} style={{ width: 100, height: 100 }}>
             <Text style={props.buttonText || styles.buttonText}>{props.title}</Text>
           </Image>
         </View>

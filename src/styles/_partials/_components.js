@@ -3,11 +3,7 @@ const color = require('./_colors');
 module.exports = {
   // button component styling
   button: {
-    width: 95,
-    height: 95,
-    flexGrow: 1,
     alignItems: 'center',
-    justifyContent: 'space-between',
     margin: 2,
   },
   buttonText: {

@@ -8,21 +8,21 @@ const color = require('./_partials/_colors');
 
 module.exports = {
   // Home Page Styling
-  input: {
-    fontSize: 40,
+  result: {
+    fontSize: 50,
     textAlign: 'right',
-    margin: 10,
-    padding: 5,
+    marginBottom: 10,
+    // padding: 5,
     marginBottom: 5,
   },
   prompt: {
     textAlign: 'center',
-    margin: 5,
-    fontSize: 16,
+    marginBottom: 3,
+    fontSize: 14,
     fontStyle: 'italic',
   },
   buttonRow: {
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     flexDirection: 'row',
   },
 };
