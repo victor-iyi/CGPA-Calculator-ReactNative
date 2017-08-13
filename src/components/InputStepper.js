@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Platform } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { styles } from '../styles';
 
 /**
@@ -10,7 +10,7 @@ const InputStepper = (props) => {
 
   return (
     <View style={styles.inputStepperContainer}>
-    
+
       {/* Decrement button (-) */}
       <TouchableOpacity
         onPress={props.onDecrement}>
