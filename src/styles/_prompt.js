@@ -12,8 +12,8 @@ module.exports = {
     fontSize: 50,
     textAlign: 'right',
     marginBottom: 10,
-    // padding: 5,
-    marginBottom: 5,
+    paddingRight: 5,
+    marginBottom: 10,
   },
   prompt: {
     textAlign: 'center',

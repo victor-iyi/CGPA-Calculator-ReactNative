@@ -49,11 +49,11 @@ class GPAPrompt extends Component {
       this.clearResult();
     else {
       const result = parseInt(this.state.result)
-      if (result > 0 && result <= 12) {
+      if (result > 0 && result <= 20) {
         const { navigate } = this.props.navigation;
         navigate('CalculateGPA', { semesters: result });
       } else
-        Alert.alert('Number of semesters out of range.\nMin is 1 & Max is 12');
+        Alert.alert('Number of semesters out of range.\nMin is 1 & Max is 20');
     }
   }
 
