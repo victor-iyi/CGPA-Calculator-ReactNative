@@ -10,21 +10,21 @@ const InputStepper = (props) => {
 
   return (
     <View style={styles.inputStepperContainer}>
-
-      {/* Increment button (+) */}
+    
+      {/* Decrement button (-) */}
       <TouchableOpacity
-        onPress={props.onIncrement}>
+        onPress={props.onDecrement}>
         <View style={styles.inputStepperIncrease}>
-          <Text style={styles.inputStepperControlText}>{ props.increaseValue || '–-' }</Text>
+          <Text style={styles.inputStepperControlText}>{ props.increaseValue || '-' }</Text>
         </View>
       </TouchableOpacity>
 
       {/* Value (+) */}
       <Text style={styles.inputStepperValue}>{ props.value }</Text>
 
-      {/* Decrement button (-) */}
+      {/* Increment button (+) */}
       <TouchableOpacity
-        onPress={props.onDecrement}>
+        onPress={props.onIncrement}>
         <View style={styles.inputStepperDecrease}>
           <Text style={styles.inputStepperControlText}>{ props.decreaseValue || '+' }</Text>
         </View>

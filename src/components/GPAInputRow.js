@@ -40,27 +40,34 @@ export const GPAInputRow = (props) => {
         *   overrideTintColor={true}
         *   onValueChange={props.onGradeChange}
         *  />
+        * <UIStepper
+        *   minimumValue={0}
+        *   displayValue={true}
+        *   tintColor="#0a0a0a"
+        *   textColor="#0a0a0a"
+        *   borderColor="#0a0a0a"
+        *   borderWidth={.5}
+        *   fontSize={20}
+        *   height={30}
+        *   width={100}
+        *   overrideTintColor={true}
+        *   onValueChange={props.onUnitChange}
+        * />
       */}
 
       <InputStepper
-        onIncrement={null}
-        onDecrement={null}
-        value="A"
+        onIncrement={props.onGradeIncrease}
+        onDecrement={props.onGradeDecrease}
+        value={props.gradeValue}
       />
-
-      <UIStepper
-        minimumValue={0}
-        displayValue={true}
-        tintColor="#0a0a0a"
-        textColor="#0a0a0a"
-        borderColor="#0a0a0a"
-        borderWidth={.5}
-        fontSize={20}
-        height={30}
-        width={100}
-        overrideTintColor={true}
-        onValueChange={props.onUnitChange}
+      <InputStepper
+        onIncrement={props.onUnitIncrease}
+        onDecrement={props.onUnitDecrease}
+        value={props.unitValue}
       />
+{/* 
+ * 
+ */}
 
     </View>
   );

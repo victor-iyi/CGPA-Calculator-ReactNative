@@ -20,14 +20,14 @@ module.exports = {
   inputStepperContainer: {
     flex: 1,
     flexDirection: 'row',
-    // width: 90,
-    height: 30,
-    margin: 15,
+    width: 90,
+    height: 40,
+    margin: 10,
     borderRadius: 5,
     borderWidth: .5,
     borderColor: color.black,
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
   },
   inputStepperIncrease: {
     width: 30,
@@ -38,8 +38,9 @@ module.exports = {
     borderLeftWidth: .5, 
   },
   inputStepperControlText: {
-    fontSize: 40,
-    fontWeight: 'normal',
+    width: 30,
+    fontSize: 20,
+    padding: 10,
   },
   inputStepperValue: {
   },

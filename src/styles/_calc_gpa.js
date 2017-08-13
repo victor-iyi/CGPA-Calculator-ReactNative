@@ -20,4 +20,7 @@ module.exports = {
   courseLabel: {
     fontSize: 20,
   },
+  calcButton: {
+    marginBottom: 30,
+  },
 };
