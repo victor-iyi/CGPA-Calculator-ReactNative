@@ -66,7 +66,7 @@ class CalulateGPA extends Component {
       });
     }
   }
-  
+
   _calculate () {
     // calculates the gpa
   }
@@ -89,12 +89,14 @@ class CalulateGPA extends Component {
 
   render () {
     return (
-      <ScrollView style={[styles.container, styles.calcGPAContainer]}>
-        <View>
-          {this.renderInputRow()}
-        </View>
-        <Button raised icon={{ name: 'calculator', type: 'font-awesome' }} style={styles.calcButton} title="Calculate" onPress={this._calculate} />
-      </ScrollView>
+      <View style={styles.container}>
+        <ScrollView style={styles.calcGPAContainer}>
+          <View>
+            {this.renderInputRow()}
+          </View>
+          <Button raised icon={{ name: 'calculator', type: 'font-awesome' }} style={styles.calcButton} title="Calculate" onPress={this._calculate} />
+        </ScrollView>
+      </View>
     );
   }
 

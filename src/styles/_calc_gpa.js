@@ -8,6 +8,8 @@ const color = require('./_partials/_colors');
 module.exports = {
 
   // CalcGPA Page Styling
+  calcGPAContainer: {
+  },
   gparow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
