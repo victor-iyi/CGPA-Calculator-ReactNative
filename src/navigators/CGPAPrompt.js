@@ -44,7 +44,7 @@ class CGPAPrompt extends Component {
       const result = parseInt(this.state.result)
       if ( result > 0 && result <= 12 ) {
         const { navigate } = this.props.navigation;
-        navigate('CalculateCGPA', { sessions: result });
+        navigate('CalculateCGPA', { semesters: result });
       } else
         Alert.alert('Number of semesters out of range.\nMin is 1 & Max is 12')
     }
@@ -55,7 +55,7 @@ class CGPAPrompt extends Component {
       <View style={styles.container}>
         <PromptLayout 
           result={this.state.result}
-          prompt="Enter number of sessions completed & press go!"
+          prompt="Enter number of semesters completed & press go!"
           controlButton={this._controlButton}
           numButton={this._numButton} />
       </View>

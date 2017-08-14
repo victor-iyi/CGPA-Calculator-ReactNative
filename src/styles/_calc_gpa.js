@@ -9,6 +9,8 @@ module.exports = {
 
   // CalcGPA Page Styling
   calcGPAContainer: {
+    marginTop: 10,
+    marginBottom: 50,
   },
   gparow: {
     flexDirection: 'row',

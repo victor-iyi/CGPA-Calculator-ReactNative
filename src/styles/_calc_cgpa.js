@@ -8,7 +8,8 @@ const color = require('./_partials/_colors');
 module.exports = {
 
   // CalculateCGPA Page Styling
-  cgpaContainer: {
-    
+  calcCGPAContainer: {
+    marginTop: 30,
+    marginBottom: 50,
   },
 };

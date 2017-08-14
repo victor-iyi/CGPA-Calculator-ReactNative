@@ -18,19 +18,22 @@ class CalculateCGPA extends Component {
     // navigation params
     this.params = this.props.navigation.state.params;
     // bindings
-    //this.meth = this.meth.bind(this);
+    this._updateGPA = this._updateGPA.bind(this);
+    this._calculate = this._calculate.bind(this);
   }
 
   static navigationOptions = ({ navigation }) => ({
-    title: `CalculateCGPA Page`, //`$ {navigation.state.params.var }`
+    title: `Calculate CGPA for ${navigation.state.params.semesters} semesters`, //`$ {navigation.state.params.var }`
     // headerRight: <Button title="Info" onPress={() => Alert.alert('Info nav clicked!') } />,
   });
 
   renderLevel () {
-    let views = []
-    for (let i = 0; i < this.params.sessions; i++) {
-      let level = `${i + 1}00`;
-      views.push(<LevelCard key={i} semesters={2} level={level} onChangeText={this._updateGPA} />);
+    const views = []
+    const sessions = Math.ceil(this.params.semesters / 2);
+    for (let i = 0; i < sessions; i++) {
+      const level = `${i + 1}00`,
+        semesters = i + 1 === sessions && this.params.semesters % 2 !== 0 ? 1 : 2;
+      views.push(<LevelCard key={i} semesters={semesters} level={level} onChangeText={this._updateGPA} />);
     }
     return views;
   }
@@ -46,8 +49,10 @@ class CalculateCGPA extends Component {
   render () {
     return (
       <ScrollView style={styles.container}>
-        {this.renderLevel()}
-        <Button raised icon={{ name: 'calculator', type: 'font-awesome' }} style={styles.calcButton} title="Calculate" onPress={this._calculate} />
+        <View style={styles.calcCGPAContainer}>
+          {this.renderLevel()}
+          <Button raised icon={{ name: 'calculator', type: 'font-awesome' }} style={styles.calcButton} title="Calculate" onPress={this._calculate} />
+        </View>
       </ScrollView>
     );
   }

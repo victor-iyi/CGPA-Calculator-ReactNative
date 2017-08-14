@@ -25,7 +25,7 @@ class CalulateGPA extends Component {
     this.UNITS = [0, 1, 2, 3, 4, 5, 6];
     this.grades = [];
     this.units = [];
-    for (let i = 0; i < this.params.semesters; i++) {
+    for (let i = 0; i < this.params.courses; i++) {
       this.grades.push("A");
       this.units.push(0);
     }
@@ -39,7 +39,7 @@ class CalulateGPA extends Component {
   }
 
   static navigationOptions = ({ navigation }) => ({
-    title: `Calulate GPA`, //`$ {navigation.state.params.var }`
+    title: `Calulate GPA for ${navigation.state.params.courses} courses`, //`$ {navigation.state.params.var }`
     // headerRight: <Button title="Info" onPress={() => Alert.alert('Info nav clicked!') } />,
   });
 
@@ -72,8 +72,8 @@ class CalulateGPA extends Component {
   }
 
   renderInputRow (number) {
-    let views = [];
-    for (let i = 1; i <= this.params.semesters; i++) {
+    const views = [];
+    for (let i = 1; i <= this.params.courses; i++) {
       views.push(<GPAInputRow
         key={i}
         course={`Course ${i}`}
@@ -89,14 +89,12 @@ class CalulateGPA extends Component {
 
   render () {
     return (
-      <View style={styles.container}>
-        <ScrollView style={styles.calcGPAContainer}>
-          <View>
-            {this.renderInputRow()}
-          </View>
+      <ScrollView style={styles.container}>
+        <View style={styles.calcGPAContainer}>
+          {this.renderInputRow()}
           <Button raised icon={{ name: 'calculator', type: 'font-awesome' }} style={styles.calcButton} title="Calculate" onPress={this._calculate} />
-        </ScrollView>
-      </View>
+        </View>
+      </ScrollView>
     );
   }
 
