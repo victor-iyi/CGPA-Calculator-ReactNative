@@ -44,13 +44,16 @@ module.exports = {
   levelCard: {
     borderWidth: 1,
     borderColor: color.black,
-    margin: 10,
-    padding: 10,
+    // margin: 10,
+    marginLeft: 15,
+    marginRight: 15,
+    marginBottom: 15,
+    padding: 5,
   },
   levelTitle: {
-    fontSize: 30,
+    fontSize: 25,
     textAlign: 'center',
-    padding: 5,
+    marginBottom: 5,
   },
   semesterRow: {
     display: 'flex',
@@ -63,9 +66,9 @@ module.exports = {
     fontSize: 16,
   },
   semesterInput: {
-    flexGrow: 1.5,
+    flexGrow: 2,
     padding: 10,
-    textAlign: 'left',
+    textAlign: 'center',
     color: color.grey,
     fontSize: 16,
   },

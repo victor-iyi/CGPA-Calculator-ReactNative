@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
+import { Button } from 'react-native-elements';
 import { LevelCard } from '../components';
 import { styles } from '../styles';
 
@@ -25,12 +26,29 @@ class CalculateCGPA extends Component {
     // headerRight: <Button title="Info" onPress={() => Alert.alert('Info nav clicked!') } />,
   });
 
+  renderLevel () {
+    let views = []
+    for (let i = 0; i < this.params.sessions; i++) {
+      let level = `${i + 1}00`;
+      views.push(<LevelCard key={i} semesters={2} level={level} onChangeText={this._updateGPA} />);
+    }
+    return views;
+  }
+
+  _updateGPA (gpa) {
+
+  }
+
+  _calculate () {
+    // calculates CGPA
+  }
+
   render () {
     return (
-      <View style={styles.container}>
-        <LevelCard level="100" firstSemester={null} secondSemester={null} />
-        <LevelCard level="200" firstSemester={null} secondSemester={null} />
-      </View>
+      <ScrollView style={styles.container}>
+        {this.renderLevel()}
+        <Button raised icon={{ name: 'calculator', type: 'font-awesome' }} style={styles.calcButton} title="Calculate" onPress={this._calculate} />
+      </ScrollView>
     );
   }
 
