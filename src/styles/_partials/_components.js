@@ -12,7 +12,7 @@ module.exports = {
     color: color.black,
     textAlign: 'center',
   },
-  // InputStepper stylign
+  // InputStepper styling
   inputStepperContainer: {
     flex: 1,
     flexDirection: 'row',
@@ -27,11 +27,11 @@ module.exports = {
   },
   inputStepperIncrease: {
     width: 30,
-    borderRightWidth: .5, 
+    borderRightWidth: .5,
   },
   inputStepperDecrease: {
     width: 30,
-    borderLeftWidth: .5, 
+    borderLeftWidth: .5,
   },
   inputStepperControlText: {
     width: 30,
@@ -40,5 +40,33 @@ module.exports = {
   },
   inputStepperValue: {
   },
-
+  // LevelCard styling
+  levelCard: {
+    borderWidth: 1,
+    borderColor: color.black,
+    margin: 10,
+    padding: 10,
+  },
+  levelTitle: {
+    fontSize: 30,
+    textAlign: 'center',
+    padding: 5,
+  },
+  semesterRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  semester: {
+    flexGrow: 1,
+    fontSize: 16,
+  },
+  semesterInput: {
+    flexGrow: 1.5,
+    padding: 10,
+    textAlign: 'left',
+    color: color.grey,
+    fontSize: 16,
+  },
 };

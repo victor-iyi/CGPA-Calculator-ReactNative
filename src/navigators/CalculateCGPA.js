@@ -1,5 +1,6 @@
-import React, { Component } from 'react'; 
-import { View, Text } from 'react-native'; 
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
+import { LevelCard } from '../components';
 import { styles } from '../styles';
 
 /**
@@ -9,7 +10,7 @@ import { styles } from '../styles';
  */
 class CalculateCGPA extends Component {
 
-  constructor(props) {
+  constructor (props) {
     super(props);
     // component state
     this.state = {};
@@ -24,10 +25,11 @@ class CalculateCGPA extends Component {
     // headerRight: <Button title="Info" onPress={() => Alert.alert('Info nav clicked!') } />,
   });
 
-  render() {
+  render () {
     return (
       <View style={styles.container}>
-      
+        <LevelCard level="100" firstSemester={null} secondSemester={null} />
+        <LevelCard level="200" firstSemester={null} secondSemester={null} />
       </View>
     );
   }
