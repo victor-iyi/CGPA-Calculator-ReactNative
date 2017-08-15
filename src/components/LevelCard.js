@@ -14,7 +14,7 @@ const LevelCard = (props) => {
           maxLength={4}
           keyboardType="numeric"
           placeholder="1st Semester's GPA"
-          onChangeText={(v) => props.onChangeText(v)} />
+          onChangeText={(v) => props.onChangeText(1, v)} />
       </View>
     </View>);
 
@@ -29,7 +29,7 @@ const LevelCard = (props) => {
             maxLength={4}
             keyboardType="numeric"
             placeholder="1st Semester's GPA"
-            onChangeText={(v) => props.onChangeText(v)} />
+            onChangeText={(v) => props.onChangeText(1, v)} />
         </View>
         <View style={styles.semesterRow}>
           <Text style={styles.semester}> 2nd Semester </Text>
@@ -37,7 +37,7 @@ const LevelCard = (props) => {
             keyboardType="numeric"
             maxLength={4}
             placeholder="2nd Semester's GPA"
-            onChangeText={(v) => props.onChangeText(v)} />
+            onChangeText={(v) => props.onChangeText(2, v)} />
         </View>
       </View>
     );

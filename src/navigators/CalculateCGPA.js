@@ -31,22 +31,25 @@ class CalculateCGPA extends Component {
   });
 
 
-  _updateGPA (gpa) {
-    console.log(`gpa = ${gpa}`);
-    // update the gpa here
+  _updateGPA (index, gpa) {
+    console.log(`index = ${index} -> gpa = ${gpa}`);
   }
 
   _calculate () {
     // calculates CGPA
   }
-  
+
   renderLevel () {
     const views = []
     const sessions = Math.ceil(this.params.semesters / 2);
     for (let i = 0; i < sessions; i++) {
       const level = `${i + 1}00`,
         semesters = i + 1 === sessions && this.params.semesters % 2 !== 0 ? 1 : 2;
-      views.push(<LevelCard key={i} semesters={semesters} level={level} onChangeText={v => this._updateGPA(v)} />);
+      index = i + semesters;
+      views.push(<LevelCard key={i} semesters={semesters} level={level} onChangeText={(sem, value) => {
+        console.log('i', i, 'sem', sem);
+        this._updateGPA(index, value);
+      }} />);
     }
     return views;
   }
