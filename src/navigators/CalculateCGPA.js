@@ -24,7 +24,7 @@ class CalculateCGPA extends Component {
     this._updateGPA = this._updateGPA.bind(this);
     this._calculate = this._calculate.bind(this);
   }
-
+  
   static navigationOptions = ({ navigation }) => ({
     title: `Calculate CGPA for ${navigation.state.params.semesters} semesters`, //`$ {navigation.state.params.var}`
     // headerRight: <Button title="Info" onPress={() => Alert.alert('Info nav clicked!') } />,
@@ -32,6 +32,7 @@ class CalculateCGPA extends Component {
 
 
   _updateGPA (index, gpa) {
+    // TODO: update GPA list
     console.log(`index = ${index} -> gpa = ${gpa}`);
   }
 
@@ -45,7 +46,6 @@ class CalculateCGPA extends Component {
     for (let i = 0; i < sessions; i++) {
       const level = `${i + 1}00`,
         semesters = i + 1 === sessions && this.params.semesters % 2 !== 0 ? 1 : 2;
-      index = i + semesters;
       views.push(<LevelCard key={i} semesters={semesters} level={level} onChangeText={(sem, value) => {
         console.log('i', i, 'sem', sem);
         this._updateGPA(index, value);
