@@ -25,13 +25,10 @@ class CalculateCGPA extends Component {
     this._calculate = this._calculate.bind(this);
   }
 
-  static navigationOptions = ({
-    navigation
-  }) => ({
-      title: `Calculate CGPA for ${navigation.state.params.semesters} semesters`, //`$ {navigation.state.params.var}`
-      // headerRight: <Button title="Info" onPress={() => Alert.alert('Info nav clicked!') } />,
-    });
-
+  static navigationOptions = ({ navigation }) => ({
+    title: `Calculate CGPA for ${navigation.state.params.semesters} semesters`, //`$ {navigation.state.params.var}`
+    // headerRight: <Button title="Info" onPress={() => Alert.alert('Info nav clicked!') } />,
+  });
 
   _updateGPA (index, gpa) {
     // TODO: update GPA list
