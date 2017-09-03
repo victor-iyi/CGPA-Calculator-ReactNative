@@ -5,7 +5,7 @@ import GPAInputRow from './GPAInputRow';
 import InputStepper from './InputStepper';
 import LevelCard from './LevelCard';
 
-module.exports = {
+module.exports =  {
   Button: Button,
   ButtonRow: ButtonRow,
   PromptLayout: PromptLayout,

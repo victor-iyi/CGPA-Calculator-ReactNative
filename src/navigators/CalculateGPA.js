@@ -33,8 +33,8 @@ class CalulateGPA extends Component {
     this._onGradeChange = this._onGradeChange.bind(this);
     this._onUnitChange = this._onUnitChange.bind(this);
   }
-  
-/* +-------------------------------------------------------------------------------------
+
+  /* +-------------------------------------------------------------------------------------
  * | navigationOptions
  * +------------------------------------------------------------------------------------- */
   static navigationOptions = ({ navigation }) => ({
