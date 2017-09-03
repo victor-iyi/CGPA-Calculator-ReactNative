@@ -10,13 +10,12 @@ import { styles } from '../styles';
  *************************************
  */
 class CalulateGPA extends Component {
-
-  constructor (props) {
+  constructor(props) {
     super(props);
     // component state
     this.state = {
       grades: [], // entered grades e.g ["A", "B", "C", ...., "D"];
-      units: [], // entered units e.g [2,3,3,3,4,1,2,3,3];
+      units: [] // entered units e.g [2,3,3,3,4,1,2,3,3];
     };
     // navigation params
     this.params = this.props.navigation.state.params;
@@ -26,24 +25,26 @@ class CalulateGPA extends Component {
     this.grades = [];
     this.units = [];
     for (let i = 0; i < this.params.courses; i++) {
-      this.grades.push("A");
+      this.grades.push('A');
       this.units.push(0);
     }
     // bindings
-    this._onGradeChange = this
-      ._onGradeChange
-      .bind(this);
-    this._onUnitChange = this
-      ._onUnitChange
-      .bind(this);
+    this._onGradeChange = this._onGradeChange.bind(this);
+    this._onUnitChange = this._onUnitChange.bind(this);
   }
-
+  
+/* +-------------------------------------------------------------------------------------
+ * | navigationOptions
+ * +------------------------------------------------------------------------------------- */
   static navigationOptions = ({ navigation }) => ({
-    title: `Calulate GPA for ${navigation.state.params.courses} courses`, //`$ {navigation.state.params.var }`
+    title: `Calulate GPA for ${navigation.state.params.courses} courses` //`$ {navigation.state.params.var }`
     // headerRight: <Button title="Info" onPress={() => Alert.alert('Info nav clicked!') } />,
   });
 
-  _onGradeChange (index, action) {
+  /* +-------------------------------------------------------------------------------------
+   * | onGradeChange
+   * +------------------------------------------------------------------------------------- */
+  _onGradeChange(index, action) {
     let currVal = this.grades[index], // current value of the grade we are working with
       stateDex = this.GRADES.indexOf(currVal), // grade state index
       newDex = action === 'inc' ? stateDex + 1 : stateDex - 1; // index of new value to be incremented to
@@ -55,7 +56,10 @@ class CalulateGPA extends Component {
     }
   }
 
-  _onUnitChange (index, action) {
+  /* +-------------------------------------------------------------------------------------
+   * | onUnitChange
+   * +------------------------------------------------------------------------------------- */
+  _onUnitChange(index, action) {
     let currVal = this.units[index], // current value of the unit we are working with
       stateDex = this.UNITS.indexOf(currVal), // unit state index
       newDex = action === 'inc' ? stateDex + 1 : stateDex - 1; // index of new value to be incremented to
@@ -67,36 +71,50 @@ class CalulateGPA extends Component {
     }
   }
 
-  _calculate () {
+  /* +-------------------------------------------------------------------------------------
+   * | calculate
+   * +------------------------------------------------------------------------------------- */
+  _calculate() {
     // calculates the gpa
   }
 
-  renderInputRow (number) {
+  renderInputRow(number) {
     const views = [];
-    for (let i = 0; i < this.params.courses; i++) 
-      views.push(<GPAInputRow
-        key={i}
-        course={`Course ${i+1}`}
-        gradeValue={this.grades[i]}
-        unitValue={this.units[i]}
-        onUnitIncrease={(v) => this._onUnitChange(i, 'inc')}
-        onUnitDecrease={(v) => this._onUnitChange(i, 'dec')}
-        onGradeIncrease={(v) => this._onGradeChange(i, 'inc')}
-        onGradeDecrease={(v) => this._onGradeChange(i, 'dec')} />);
+    for (let i = 0; i < this.params.courses; i++)
+      views.push(
+        <GPAInputRow
+          key={i}
+          course={`Course ${i + 1}`}
+          gradeValue={this.grades[i]}
+          unitValue={this.units[i]}
+          onUnitIncrease={v => this._onUnitChange(i, 'inc')}
+          onUnitDecrease={v => this._onUnitChange(i, 'dec')}
+          onGradeIncrease={v => this._onGradeChange(i, 'inc')}
+          onGradeDecrease={v => this._onGradeChange(i, 'dec')}
+        />
+      );
     return views;
   }
 
-  render () {
+  /* +-------------------------------------------------------------------------------------
+   * | render
+   * +------------------------------------------------------------------------------------- */
+  render() {
     return (
       <ScrollView style={styles.container}>
         <View style={styles.calcGPAContainer}>
           {this.renderInputRow()}
-          <Button raised icon={{ name: 'calculator', type: 'font-awesome' }} style={styles.calcButton} title="Calculate" onPress={this._calculate} />
+          <Button
+            raised
+            icon={{ name: 'calculator', type: 'font-awesome' }}
+            style={styles.calcButton}
+            title="Calculate"
+            onPress={this._calculate}
+          />
         </View>
       </ScrollView>
     );
   }
-
 }
 
 export default CalulateGPA;
