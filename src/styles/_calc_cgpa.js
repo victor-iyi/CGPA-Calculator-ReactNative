@@ -1,11 +1,11 @@
-const color = require('./_partials/_colors');
+import color from './_partials/_colors';
 
 /**
  ***********************************
  *        Custom StyleSheet        *
  ***********************************
 */
-module.exports = {
+export default {
 
   // CalculateCGPA Page Styling
   calcCGPAContainer: {

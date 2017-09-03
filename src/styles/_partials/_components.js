@@ -1,6 +1,6 @@
-const color = require('./_colors');
+import color from './_colors';
 
-module.exports = {
+export default  {
   // button component styling
   button: {
     alignItems: 'center',

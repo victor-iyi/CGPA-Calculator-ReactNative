@@ -1,4 +1,4 @@
-const color = require('./_partials/_colors');
+import color from './_partials/_colors';
 
 /**
  ***********************************
@@ -6,7 +6,7 @@ const color = require('./_partials/_colors');
  ***********************************
 */
 
-module.exports = {
+export default {
   // Home Page Styling
   result: {
     fontSize: 50,

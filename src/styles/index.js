@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
 
-const color = require('./_partials/_colors');
-const componetnts = require('./_partials/_components');
+import color from './_partials/_colors';
+import component from './_partials/_components';
 
-const prompt = require('./_prompt');
-const calc_gpa = require('./_calc_gpa');
-const calc_cgpa = require('./_calc_cgpa');
+import prompt from './_prompt';
+import calc_gpa from './_calc_gpa';
+import calc_cgpa from './_calc_cgpa';
 
 /**
  ******************************************
