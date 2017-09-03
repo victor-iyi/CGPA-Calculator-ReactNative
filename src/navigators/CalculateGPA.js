@@ -35,8 +35,8 @@ class CalulateGPA extends Component {
   }
 
   /* +-------------------------------------------------------------------------------------
- * | navigationOptions
- * +------------------------------------------------------------------------------------- */
+   * | navigationOptions
+   * +------------------------------------------------------------------------------------- */
   static navigationOptions = ({ navigation }) => ({
     title: `Calulate GPA for ${navigation.state.params.courses} courses` //`$ {navigation.state.params.var }`
     // headerRight: <Button title="Info" onPress={() => Alert.alert('Info nav clicked!') } />,
