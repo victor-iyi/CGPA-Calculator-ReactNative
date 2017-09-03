@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text } from 'react-native';
+import { View, ScrollView, Text, Alert } from 'react-native';
 import { Button } from 'react-native-elements';
 import { GPAInputRow } from '../components';
 import { calculateGPA } from '../actions';
@@ -76,9 +76,13 @@ class CalulateGPA extends Component {
    * | calculate
    * +------------------------------------------------------------------------------------- */
   _calculate() {
-    const result = calculateGPA;
+    const result = calculateGPA(this.state.grades);
+    Alert.alert(`Result is ${result}`);
   }
 
+  /* +-------------------------------------------------------------------------------------
+   * | Renders the grades and units input row
+   * +------------------------------------------------------------------------------------- */
   renderInputRow(number) {
     const views = [];
     for (let i = 0; i < this.params.courses; i++)
