@@ -21,7 +21,7 @@ class CalulateGPA extends Component {
     // navigation params
     this.params = this.props.navigation.state.params;
     //
-    this.GRADES = ['A', 'B', 'C', 'D', 'E', 'F'];
+    this.GRADES = ['A', 'B', 'C', 'D', 'E', 'F'].reverse();
     this.UNITS = [0, 1, 2, 3, 4, 5, 6];
     this.grades = [];
     this.units = [];
@@ -32,6 +32,7 @@ class CalulateGPA extends Component {
     // bindings
     this._onGradeChange = this._onGradeChange.bind(this);
     this._onUnitChange = this._onUnitChange.bind(this);
+    this._calculate = this._calculate.bind(this);
   }
 
   /* +-------------------------------------------------------------------------------------
@@ -76,7 +77,7 @@ class CalulateGPA extends Component {
    * | calculate
    * +------------------------------------------------------------------------------------- */
   _calculate() {
-    const result = calculateGPA(this.state.grades);
+    const result = calculateGPA(this.state.grades, this.state.units);
     Alert.alert(`Result is ${result}`);
   }
 

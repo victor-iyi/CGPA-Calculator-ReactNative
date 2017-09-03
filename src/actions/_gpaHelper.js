@@ -24,7 +24,7 @@ export function sumArray(arr) {
  */
 export function convertGrades(grades) {
   let convertedGrades = [];
-  for (let grade of grades) convertedGrades.append(_convGrade(grade));
+  for (let grade of grades) convertedGrades.push(_convGrade(grade));
   return convertedGrades;
 }
 
