@@ -21,7 +21,7 @@ class CalulateGPA extends Component {
     // navigation params
     this.params = this.props.navigation.state.params;
     //
-    this.GRADES = ['A', 'B', 'C', 'D', 'E', 'F'].reverse();
+    this.GRADES = ['A', 'B', 'C', 'D', 'E', 'F'].reverse(); // quick fix ;) [+ & - grade btns]
     this.UNITS = [0, 1, 2, 3, 4, 5, 6];
     this.grades = [];
     this.units = [];
@@ -35,6 +35,16 @@ class CalulateGPA extends Component {
     this._calculate = this._calculate.bind(this);
   }
 
+  /* +-------------------------------------------------------------------------------------
+   * | component will mount
+   * +------------------------------------------------------------------------------------- */
+  componentWillMount() {
+    this.setState({
+      grades: this.grades,
+      units: this.units
+    });
+  }
+  
   /* +-------------------------------------------------------------------------------------
    * | navigationOptions
    * +------------------------------------------------------------------------------------- */
