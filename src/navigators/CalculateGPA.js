@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, ScrollView, Text } from 'react-native';
 import { Button } from 'react-native-elements';
 import { GPAInputRow } from '../components';
+import { calculateGPA } from '../actions';
 import { styles } from '../styles';
 
 /**
@@ -45,7 +46,7 @@ class CalulateGPA extends Component {
    * | onGradeChange
    * +------------------------------------------------------------------------------------- */
   _onGradeChange(index, action) {
-    let currVal = this.grades[index], // current value of the grade we are working with
+    const currVal = this.grades[index], // current value of the grade we are working with
       stateDex = this.GRADES.indexOf(currVal), // grade state index
       newDex = action === 'inc' ? stateDex + 1 : stateDex - 1; // index of new value to be incremented to
     if (newDex < this.GRADES.length && newDex > -1) {
@@ -60,7 +61,7 @@ class CalulateGPA extends Component {
    * | onUnitChange
    * +------------------------------------------------------------------------------------- */
   _onUnitChange(index, action) {
-    let currVal = this.units[index], // current value of the unit we are working with
+    const currVal = this.units[index], // current value of the unit we are working with
       stateDex = this.UNITS.indexOf(currVal), // unit state index
       newDex = action === 'inc' ? stateDex + 1 : stateDex - 1; // index of new value to be incremented to
     if (newDex < this.UNITS.length && newDex > -1) {
@@ -75,7 +76,7 @@ class CalulateGPA extends Component {
    * | calculate
    * +------------------------------------------------------------------------------------- */
   _calculate() {
-    // calculates the gpa
+    const result = calculateGPA;
   }
 
   renderInputRow(number) {
